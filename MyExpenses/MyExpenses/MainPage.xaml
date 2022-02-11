@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"              
+             x:Class="MyExpenses.MainPage"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             BackgroundColor="WhiteSmoke">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Frame HasShadow="True" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Red" HeightRequest="120" MinimumHeightRequest="120" CornerRadius="50" Margin="0,-50,0,0" Padding="0,50,0,0">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,0,0,0" Orientation="Vertical">                    
+                    <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,0,0,0" Orientation="Horizontal">
+                        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" WidthRequest="50" MinimumWidthRequest="50" Margin="15,0,0,0" Orientation="Vertical">
+                        <ImageButton Source="back" BackgroundColor="Red" Margin="0,-5,0,0" x:Name="Back" Clicked="Back_Clicked" Padding="10,10,10,10"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent">
+                            <Label x:Name="FamilyNames" FontFamily="{StaticResource Antipasto}" TextColor="White" FontAttributes="None" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0"/>
+                        </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" WidthRequest="50" MinimumWidthRequest="50" Margin="0,0,15,0">
+                        <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="WhiteSmoke" HeightRequest="40" MinimumHeightRequest="40" WidthRequest="40" MinimumWidthRequest="40" Padding="0,0,0,0" HasShadow="True" Margin="5,5,5,5" CornerRadius="30">
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                <ImageButton x:Name="Avatar" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill" Clicked="Avatar_Clicked"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    </StackLayout>            
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,0,0,0" Orientation="Horizontal">
+                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" WidthRequest="50" MinimumWidthRequest="50" Margin="15,0,0,0" Orientation="Vertical">
+                            <Label Text="Aylık Gelir" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="White" FontFamily="{StaticResource Antipasto}" />
+                            <Label x:Name="Salary" FontSize="14" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="White" FontFamily="{StaticResource Antipasto}" Margin="0,-38,0,0"/>
+                        </StackLayout>
+                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                        <Label Text="Aylık Kalan" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="White" FontFamily="{StaticResource Antipasto}" />
+                        <Label x:Name="CurrentMonthBalance" FontSize="14" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="White" FontFamily="{StaticResource Antipasto}" Margin="0,-38,0,0"/>
+                    </StackLayout>
+                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" WidthRequest="50" MinimumWidthRequest="50" Margin="0,0,15,0" Orientation="Vertical">
+                        <Label Text="Aylık Gider" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="White" FontFamily="{StaticResource Antipasto}" />
+                        <Label x:Name="CurrentMonthExpenses" FontSize="14" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="White" FontFamily="{StaticResource Antipasto}" Margin="0,-38,0,0"/>
+                    </StackLayout>
+                    </StackLayout>                
+            </StackLayout>
+        </Frame>
+        <Frame BackgroundColor="WhiteSmoke" CornerRadius="15" HeightRequest="30" MinimumHeightRequest="30" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="30,0,30,0" HasShadow="True" Padding="0,0,0,0">
+            <StackLayout VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="30" MinimumHeightRequest="30" Orientation="Horizontal"  Padding="0,0,0,0" BackgroundColor="Transparent">
+                <DatePicker x:Name="StartDate" FontFamily="{StaticResource Antipasto}" TextTransform="None"  VerticalOptions="FillAndExpand" HorizontalOptions="Center" FontSize="Body" TextColor="Black" BackgroundColor="Transparent" Margin="0,0,0,-9"/>
+                <DatePicker x:Name="EndDate" FontFamily="{StaticResource Antipasto}" TextTransform="None" VerticalOptions="FillAndExpand" HorizontalOptions="Center"  FontSize="Body" TextColor="Black" BackgroundColor="Transparent" Margin="0,0,0,-9"/>
+            </StackLayout>
+        </Frame>  
+        <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="40" MinimumHeightRequest="40" Margin="32,0,32,0" Orientation="Horizontal">
+            <Label Text="Gider Tipleri" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" TextColor="Black" FontFamily="{StaticResource Antipasto}"/>           
+            <Button Text="Tümü" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" TextColor="White" BackgroundColor="Red" CornerRadius="15" FontSize="15" FontFamily="{StaticResource Antipasto}" TextTransform="None" x:Name="AllData" Clicked="AllData_Clicked"/>           
+        </StackLayout>
+        <ScrollView Orientation="Horizontal" Margin="32,0,32,0">
+            <StackLayout x:Name="ExpensesItemList" VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="40" MinimumHeightRequest="40" Margin="0,0,0,0" Orientation="Horizontal">
+               
+            </StackLayout>
+        </ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="30,0,30,0" BackgroundColor="Transparent">
+            <flv:FlowListView x:Name="TransactionList" RowHeight="100" FlowColumnCount="1"  HasUnevenRows="False" FlowItemTapped="TransactionList_FlowItemTapped" SelectionMode="Single" Margin="5,10,5,0">
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <SwipeView>                               
+                                    <SwipeView.RightItems>                              
+                                        <SwipeItems>                                       
+                                            <SwipeItem Text="Sil" BackgroundColor="Red" Clicked="SwipeItem_Clicked" AutomationId="{Binding Id}"/>                                                                      
+                                    </SwipeItems>                                 
+                                </SwipeView.RightItems>                            
+                            <Frame CornerRadius="15" BorderColor="Red" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,8" Padding="0,0,0,0">
+                                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Margin="0,0,0,0" >
+                                        <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="25" MinimumHeightRequest="25" Orientation="Horizontal" Margin="0,0,0,0" BackgroundColor="Red">
+                                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                            <Label Text="{Binding ExpensesName}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="White" FontFamily="{StaticResource Antipasto}" Margin="5,0,0,0"/>
+                                        </StackLayout>                        
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="25" MinimumHeightRequest="25" Orientation="Horizontal" Margin="0,-5,0,0">
+                                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                            <Label Text="Tutar:" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" TextColor="Black" FontFamily="{StaticResource Antipasto}" Margin="5,0,0,0"/>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                            <Label Text="{Binding ExpensesAmount,StringFormat='{0} ₺'}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" TextColor="Black" FontFamily="{StaticResource Antipasto}" Margin="0,0,5,0"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="25" MinimumHeightRequest="25" Orientation="Horizontal" Margin="0,-5,0,0">
+                                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                            <Label Text="{Binding ExpensesDescription}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" TextColor="Black" FontFamily="{StaticResource Antipasto}" Margin="5,0,0,0"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                        <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand" HeightRequest="13" MinimumHeightRequest="13" Orientation="Horizontal" Margin="0,-5,0,0">
+                                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Orientation="Horizontal">
+                                                <Label Text="{Binding Date}" VerticalOptions="FillAndExpand" HorizontalOptions="End" HorizontalTextAlignment="End" TextColor="Black" FontFamily="{StaticResource Antipasto}" Margin="5,0,5,0" FontSize="10"/>
+                                                <Label Text="{Binding Time}" VerticalOptions="FillAndExpand" HorizontalOptions="End" HorizontalTextAlignment="End" TextColor="Black" FontFamily="{StaticResource Antipasto}" Margin="5,0,5,0" FontSize="10"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                            </SwipeView>
+                        </Grid>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+            </flv:FlowListView>
+        </StackLayout>
+        <StackLayout HeightRequest="70" MinimumHeightRequest="70" BackgroundColor="Transparent" VerticalOptions="End">
+            <ImageButton Source="plus" BackgroundColor="Red" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Margin="0,-5,0,0" x:Name="AddExpense" Clicked="AddExpense_Clicked" HeightRequest="60" MinimumHeightRequest="60" WidthRequest="60" MinimumWidthRequest="60" CornerRadius="20" Padding="15,15,15,15"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

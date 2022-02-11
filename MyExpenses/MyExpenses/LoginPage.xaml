@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"             
+             x:Class="MyExpenses.LoginPage" BackgroundColor="WhiteSmoke" xmlns:local="clr-namespace:MyExpenses.CustomRenderers">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Frame HasShadow="True" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Red" HeightRequest="220" MinimumHeightRequest="220" CornerRadius="50" Margin="0,-50,0,0" Padding="0,50,0,0">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,0,0,0">
+                <Label Text="Giderlerim" FontSize="40" FontFamily="{StaticResource Antipasto}" TextColor="White" FontAttributes="None" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,-70,0,0"/>            
+            </StackLayout>
+        </Frame>
+        <Frame BackgroundColor="WhiteSmoke" CornerRadius="70" HeightRequest="100" WidthRequest="100" VerticalOptions="End" HorizontalOptions="Center" Margin="0,-70,0,0" HasShadow="True" Padding="0,0,0,0">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,0,0,0" Padding="0,0,0,0">
+                <Image  x:Name="ProfileImage" Source="https://www.siberstar.com/wp-content/uploads/2020/11/Among-Us-Profil-Fotograflari-Profile-Photo-780x440.jpg" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,0"/>
+            </StackLayout>
+        </Frame>
+        <Frame CornerRadius="20" HeightRequest="290" Margin="30,0,30,0" HasShadow="True" BackgroundColor="WhiteSmoke" Padding="0,0,0,0">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                <Label Text="Kullanıcı Adı" TextColor="Black" Margin="20,20,0,0" FontAttributes="40" FontSize="25" FontFamily="{StaticResource Antipasto}"/>
+                <Entry x:Name="UserName" HorizontalTextAlignment="Center" TextColor="Black" Margin="20,-10,20,0" FontAttributes="Bold" FontSize="20" FontFamily="{StaticResource Antipasto}"/>
+                <Label Text="Şifre" TextColor="Black" Margin="20,5,0,0" FontAttributes="Bold" FontSize="25" FontFamily="{StaticResource Antipasto}"/>
+                <Entry x:Name="Password" Text="1234" HorizontalTextAlignment="Center" IsPassword="True" TextColor="Black" Margin="20,-15,20,0" FontAttributes="Bold" FontSize="20" FontFamily="{StaticResource Antipasto}"/>
+                <StackLayout VerticalOptions="Start" HorizontalOptions="End" Orientation="Horizontal" Margin="20,0,0,0">
+                    <Label Text="Beni Hatırla" TextColor="Black" FontAttributes="Bold" FontSize="20" FontFamily="{StaticResource Antipasto}"/>
+                    <local:CustomSwitch OnColor="#FFBEBE" ThumbColor="Red" Toggled="RememberMe_Toggled" x:Name="RememberMe" Margin="0,0,20,0"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>       
+            <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="48,-40,60,0" Padding="0,0,0,0" Orientation="Horizontal">
+                <Button Text="Kayıt Ol" TextTransform="None" BackgroundColor="Red" WidthRequest="130" TextColor="White" FontSize="25" FontAttributes="Bold" VerticalOptions="End" HorizontalOptions="FillAndExpand" Margin="0,0,0,0" FontFamily="{StaticResource Antipasto}" x:Name="Register" Clicked="Register_Clicked" CornerRadius="15"/>
+                <Button Text="Giriş" TextTransform="None" BackgroundColor="Red" WidthRequest="130" TextColor="White" FontSize="25" FontAttributes="Bold" VerticalOptions="End" HorizontalOptions="FillAndExpand" Margin="0,0,0,0" FontFamily="{StaticResource Antipasto}" x:Name="Login" Clicked="Login_Clicked" CornerRadius="15"/>
+            </StackLayout>
+        <ActivityIndicator Color="Red" x:Name="Waiting" VerticalOptions="End" HorizontalOptions="CenterAndExpand"/>
+    </StackLayout>
+</ContentPage>

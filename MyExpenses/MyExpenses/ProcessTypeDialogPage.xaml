@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="MyExpenses.ProcessTypeDialogPage">
+    <Frame Margin="30,0,30,0" CornerRadius="10" OutlineColor="Red" BorderColor="Red" BackgroundColor="WhiteSmoke" HasShadow="True" HeightRequest="300" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="0,0,0,0">
+        <StackLayout Orientation="Vertical" BackgroundColor="WhiteSmoke"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Red" Margin="0,0,0,0" Padding="10,8,10,0">
+                <Label Text="İşlem Seçiniz" VerticalOptions="Start" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20" TextColor="White"/>
+            </StackLayout>
+            <StackLayout  Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="10,0,10,0">
+                <Button Clicked="AddExpensesType_Clicked" TextTransform="None" FontFamily="{StaticResource Antipasto}" x:Name="AddExpensesType" Text="Gider Tipi Ekle" CornerRadius="20" BorderColor="Red" BorderWidth="1" BackgroundColor="Transparent" TextColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,0,2,0" />
+                <Button Clicked="UpdateExpensesType_Clicked" TextTransform="None" FontFamily="{StaticResource Antipasto}" x:Name="UpdateExpensesType" Text="Gider Tipi Güncelle" CornerRadius="20" BorderColor="Red" BorderWidth="1" BackgroundColor="Transparent" TextColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,0,2,0" />
+                <Button Clicked="AddExpensesTypeTransaction_Clicked" TextTransform="None" FontFamily="{StaticResource Antipasto}" x:Name="AddExpensesTypeTransaction" Text="Gider Hareketi Ekle" CornerRadius="20" BorderColor="Red" BorderWidth="1" BackgroundColor="Transparent" TextColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,0,2,0" />
+
+            </StackLayout>
+            <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand" Orientation="Horizontal" BackgroundColor="Transparent" Margin="10,0,10,0">
+                <Button Clicked="Close_Clicked" TextTransform="None" FontFamily="{StaticResource Antipasto}" x:Name="Close" Text="Kapat" CornerRadius="20" BorderColor="Red" BorderWidth="1" BackgroundColor="Red" TextColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="2,0,2,10" />
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

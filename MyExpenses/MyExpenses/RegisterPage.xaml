@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyExpenses.RegisterPage">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Frame HasShadow="True" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Red" HeightRequest="120" MinimumHeightRequest="120" CornerRadius="50" Margin="0,-50,0,0" Padding="0,50,0,0">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,0,0,0" Orientation="Vertical">
+
+                <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,0,0,0" Orientation="Horizontal">
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" WidthRequest="50" MinimumWidthRequest="50" Margin="15,0,0,0" Orientation="Vertical">
+                        <ImageButton Source="back" BackgroundColor="Red" Margin="0,-5,0,0" x:Name="Back" Clicked="Back_Clicked" Padding="10,10,10,10"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent">
+                        <Label Text="Kayıt Ol" FontSize="30" FontFamily="{StaticResource Antipasto}" TextColor="White" FontAttributes="None" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" WidthRequest="50" MinimumWidthRequest="50" Margin="0,0,15,0">
+                        <Button Text="+" BackgroundColor="Red" TextColor="Red" FontFamily="{StaticResource Antipasto}" FontSize="30" Margin="0,-5,0,0" x:Name="AddExpense"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,0,0,0" Orientation="Horizontal">
+                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red" WidthRequest="50" MinimumWidthRequest="50" Margin="15,0,0,0" Orientation="Vertical">
+                        <Label Text="Aylık Gelir" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="Red" FontFamily="{StaticResource Antipasto}" />
+                        <Label x:Name="Salary" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="Red" FontFamily="{StaticResource Antipasto}" Margin="0,-38,0,0"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red">
+                        <Label Text="Aylık Kalan" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="Red" FontFamily="{StaticResource Antipasto}" />
+                        <Label Text="300,45 ₺" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="Red" FontFamily="{StaticResource Antipasto}" Margin="0,-38,0,0"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red" WidthRequest="50" MinimumWidthRequest="50" Margin="0,0,15,0" Orientation="Vertical">
+                        <Label Text="Aylık Gider" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="Red" FontFamily="{StaticResource Antipasto}" />
+                        <Label Text="4230,00 ₺" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="Red" FontFamily="{StaticResource Antipasto}" Margin="0,-38,0,0"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+        <Frame BackgroundColor="WhiteSmoke" CornerRadius="15" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="30,0,30,10" HasShadow="True" Padding="0,0,0,0">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical"  Padding="0,0,0,0" BackgroundColor="Transparent">
+                <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" HeightRequest="80" MinimumHeightRequest="80" Orientation="Horizontal">
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                        <Label Text="Lütfen Avatar Seçin" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,10,0,0"/>
+                        <Picker x:Name="Images" Title="Seçmek için Dokunun" TitleColor="Gray" SelectedIndexChanged="Images_SelectedIndexChanged" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="Black" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,-15,5,0"/>
+                    </StackLayout>
+                    <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="End" BackgroundColor="WhiteSmoke" HeightRequest="70" MinimumHeightRequest="70" WidthRequest="70" MinimumWidthRequest="70" Padding="0,0,0,0" HasShadow="True" Margin="5,5,5,5" CornerRadius="35">
+                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                            <Image x:Name="Avatar" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <Label Text="Kullanıcı Adı" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,0,0,0"/>
+                <Entry x:Name="UserName" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="Black" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,-10,5,0"/>
+
+                <Label Text="Şifre" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,0,0,0"/>
+                <Entry x:Name="Password" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="Black" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,-10,5,0"/>
+
+                <Label Text="Şifre Tekrar" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,0,0,0"/>
+                <Entry x:Name="PasswordAgain" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="Black" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,-10,5,0"/>
+
+         
+
+                <Label Text="Maaş (₺)" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,0,0,0"/>
+                <Entry x:Name="Salarys" VerticalOptions="Start" Keyboard="Numeric" HorizontalOptions="FillAndExpand" TextColor="Black" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,-10,5,0"/>
+
+                <Label Text="Aile Kodu" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,0,0,0"/>
+                <Entry x:Name="FamilyId" VerticalOptions="Start" Keyboard="Numeric" HorizontalOptions="FillAndExpand" TextColor="Black" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="5,-10,5,0"/>
+                <Label Text="Aile kodunuz yok ise boş geçebilirsiniz" VerticalOptions="Start" TextColor="red" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="10" Margin="6,-10,0,0"/>
+            </StackLayout>
+        </Frame>
+        <Label x:Name="DeviceId" FontFamily="{StaticResource Antipasto}" FontSize="5" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="Transparent" HorizontalTextAlignment="Center"/>
+        <Button Clicked="Register_Clicked" TextTransform="None" FontFamily="{StaticResource Antipasto}" x:Name="Register" Text="Kayıt Ol" CornerRadius="20" BorderColor="Red" BorderWidth="1" BackgroundColor="Red" TextColor="White" VerticalOptions="End" HorizontalOptions="FillAndExpand" Margin="30,0,30,10" />
+    </StackLayout>
+</ContentPage>

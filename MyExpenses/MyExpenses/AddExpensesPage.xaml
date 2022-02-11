@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyExpenses.AddExpensesPage"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
+    <Frame Margin="30,0,30,0" x:Name="FrameProperties" CornerRadius="10" OutlineColor="Red" BorderColor="Red" BackgroundColor="WhiteSmoke" HasShadow="True"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="0,0,0,0">
+        <StackLayout Orientation="Vertical" BackgroundColor="WhiteSmoke"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Red" Margin="0,0,0,0" Padding="10,8,10,0" Orientation="Horizontal" HeightRequest="40" MinimumHeightRequest="40">
+                <Label x:Name="ProcessTypess" VerticalOptions="Start" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20" TextColor="White"/>
+                <Label x:Name="SelectedBackColorName" VerticalOptions="Start" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="1" TextColor="Red"/>
+                <Label x:Name="SelectedForeColorName" VerticalOptions="Start" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="1" TextColor="Red"/>
+                <Label x:Name="ExpensesId" VerticalOptions="Start" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="1" TextColor="Red"/>
+            </StackLayout>
+            <StackLayout  Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="10,0,10,0">
+                <Label Text="Gider Tipi" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand"  FontFamily="{StaticResource Antipasto}" FontSize="20"/>
+                <Entry x:Name="ExpensesName" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="Black" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="0,-10,0,0"/>
+                <Label Text="Arkaplan Renk" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="0,-10,0,0"/>
+                <Picker x:Name="BackColors" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand" FontFamily="{StaticResource Antipasto}" FontSize="20" SelectedIndexChanged="BackColors_SelectedIndexChanged" Margin="0,-10,0,0"/>
+                <Label Text="Yazı Renk" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand" FontFamily="{StaticResource Antipasto}" FontSize="20" Margin="0,-10,0,0"/>
+                <Picker x:Name="ForeColors" VerticalOptions="Start" TextColor="Black" HorizontalOptions="FillAndExpand" FontFamily="{StaticResource Antipasto}" FontSize="20" SelectedIndexChanged="ForeColors_SelectedIndexChanged" Margin="0,-10,0,0"/>
+               
+            </StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand" x:Name="Lists" HorizontalOptions="FillAndExpand" Margin="5,0,5,0" BackgroundColor="Transparent">
+                
+                <flv:FlowListView x:Name="ExpensesList" RowHeight="100" FlowColumnCount="1"  HasUnevenRows="False" FlowItemTapped="ExpensesList_FlowItemTapped" SelectionMode="Single" Margin="5,10,5,0">
+                    <flv:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                
+                                <Frame CornerRadius="15" BorderColor="WhiteSmoke" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,8" Padding="0,0,0,0">
+                                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Margin="0,0,0,0">
+                                        <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="25" MinimumHeightRequest="25" Orientation="Horizontal" Margin="0,0,0,0">
+                                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                                <Label Text="{Binding ExpensesName}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" TextColor="Black" FontFamily="{StaticResource Antipasto}" Margin="5,0,0,0"/>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Orientation="Horizontal">
+                                                <Label Text="{Binding ForeColor}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" TextColor="Black" FontFamily="{StaticResource Antipasto}" Margin="0,0,5,0"/>
+                                                <Label Text="{Binding BackgroundColor}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" TextColor="Black" FontFamily="{StaticResource Antipasto}" Margin="0,0,5,0"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+
+                            </Grid>
+                        </DataTemplate>
+                    </flv:FlowListView.FlowColumnTemplate>
+                </flv:FlowListView>
+            </StackLayout>
+            <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand" Orientation="Horizontal" BackgroundColor="Transparent" Margin="10,0,10,0">
+                <Button Clicked="Close_Clicked" TextTransform="None" FontFamily="{StaticResource Antipasto}" x:Name="Close" Text="Kapat" CornerRadius="20" BorderColor="Red" BorderWidth="1" BackgroundColor="Red" TextColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="2,0,0,10" />
+                <Button Clicked="Ok_Clicked" TextTransform="None" FontFamily="{StaticResource Antipasto}" x:Name="Ok" Text="Kaydet" CornerRadius="20" BorderColor="Red" BorderWidth="1" BackgroundColor="Red" TextColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,2,10" />
+                <Button Clicked="Update_Clicked" TextTransform="None" FontFamily="{StaticResource Antipasto}" x:Name="Update" Text="Güncelle" CornerRadius="20" BorderColor="Red" BorderWidth="1" BackgroundColor="Red" TextColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,2,10" />
+            </StackLayout>           
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

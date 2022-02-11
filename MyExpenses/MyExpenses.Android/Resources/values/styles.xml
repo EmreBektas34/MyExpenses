@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="MainTheme" parent="MainTheme.Base">
+    <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+  </style>
+  <style name="MyDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#FF0000</item>
+  </style>
+  <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+    <item name="android:headerBackground">#FF0000</item>
+  </style>
+</resources>

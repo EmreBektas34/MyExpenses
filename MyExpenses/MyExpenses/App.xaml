@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyExpenses.App">
+    <Application.Resources>
+       <ResourceDictionary>
+          <OnPlatform x:TypeArguments="x:String" x:Key="Seville">
+             <On Platform="Android" Value="Seville.ttf#Seville" />
+             <On Platform="UWP" Value="/Assets/Seville.ttf#Seville" />
+             <On Platform="iOS" Value="Seville" />
+          </OnPlatform>
+          <OnPlatform x:TypeArguments="x:String" x:Key="Antipasto">
+             <On Platform="Android" Value="Antipasto.otf#Antipasto" />
+             <On Platform="UWP" Value="/Assets/Antipasto.otf#Antipasto" />
+             <On Platform="iOS" Value="Antipasto" />
+          </OnPlatform>
+          <OnPlatform x:TypeArguments="x:String" x:Key="Kaushan">
+             <On Platform="Android" Value="Kaushan.otf#Kaushan" />
+             <On Platform="UWP" Value="/Assets/Kaushan.otf#Kaushan" />
+             <On Platform="iOS" Value="Kaushan" />
+          </OnPlatform>
+          <OnPlatform x:TypeArguments="x:String" x:Key="Sofia">
+             <On Platform="Android" Value="Sofia.otf#Sofia" />
+             <On Platform="UWP" Value="/Assets/Sofia.otf#Sofia" />
+             <On Platform="iOS" Value="Sofia" />
+          </OnPlatform>
+          <OnPlatform x:TypeArguments="x:String" x:Key="WalkwayBold">
+             <On Platform="Android" Value="WalkwayBold.ttf#WalkwayBold" />
+             <On Platform="UWP" Value="/Assets/WalkwayBold.ttf#WalkwayBold" />
+             <On Platform="iOS" Value="WalkwayBold" />
+          </OnPlatform>
+          <OnPlatform x:TypeArguments="x:String" x:Key="WalkwayOblique">
+             <On Platform="Android" Value="WalkwayOblique.ttf#WalkwayOblique" />
+             <On Platform="UWP" Value="/Assets/WalkwayOblique.ttf#WalkwayOblique" />
+             <On Platform="iOS" Value="WalkwayOblique" />
+          </OnPlatform>
+          <OnPlatform x:TypeArguments="x:String" x:Key="Industria">
+             <On Platform="Android" Value="Industria.ttf#Industria" />
+             <On Platform="UWP" Value="/Assets/Industria.ttf#Industria" />
+             <On Platform="iOS" Value="Industria" />
+          </OnPlatform>
+       </ResourceDictionary>
+    </Application.Resources>
+</Application>
